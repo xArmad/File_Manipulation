@@ -5,28 +5,28 @@ public:
 	const char* Filename;
 	int File(const char* filename, std::string content, bool closed)
 	{
-    		// Checks if file doesn't exists
-    		if(!std::filesystem::exists(this->Filename == filename))
-    		{
-      			std::ofstream outfile (this->Filename = filename);
-     			 outfile << content << std::endl;
-      			// Checks if file is open
-     			 if(outfile.is_open())
-      			 {
-        			std::cout << "[CFile: SUCCESS] " << filename << " file was successfly created" << std::endl;
-        			// Checks file status
-        			if(closed == true)
-        			{
-          				outfile.close();
-        			} else {
-	      				std::cout << "File Not Closed" << std::endl;
-	      			}
-    	      		}
-    		} else {
-      			std::cout << "[CFile: ERROR] " << filename << " already exists" << std::endl;
+		// Checks if file doesn't exists
+		if(!std::filesystem::exists(this->Filename == filename))
+		{
+			std::ofstream outfile (this->Filename = filename);
+			outfile << content << std::endl;
+			// Checks if file is open
+			if(outfile.is_open())
+			{
+				std::cout << "[CFile: SUCCESS] " << filename << " file was successfly created" << std::endl;
+        // Checks file status
+        if(closed == true)
+        {
+					outfile.close();
+				} else {
+					std::cout << "File Not Closed" << std::endl;
+				}
+			}
+		} else {
+			std::cout << "[CFile: ERROR] " << filename << " already exists" << std::endl;
 		}
 		return *filename;
-  	}
+	}
 };
 
 // Delete file
@@ -41,13 +41,13 @@ public:
     		{
       		// use remove function to delete a file
       		if(remove(this->Filename == filename) != 0)
-    		{
+    			{
 			std::cout << "[DFile: WARNING] Error deleting file: " << filename << std::endl;
       		} else {
         		std::cout << "[DFile: SUCCESS] File successfully deleted: " << filename << std::endl;
       		}
-    	}
-  	return *filename;
+    		}
+		return *filename;
 	}
 };
 
