@@ -6,7 +6,7 @@ int main()
   const char* fname = "file.txt";
   const char* new_fname = "new_file.txt";
   CFile CFile;
-	DFile DFile;
+  DFile DFile;
   RFile RFile;
   UFile UFile;
   EFile EFile;
@@ -21,7 +21,7 @@ int main()
   //sleep(2);
 
   // Reads File
-	RFile.File(fname);
+  RFile.File(fname);
   //sleep(2);
 
   // Updates File Content
